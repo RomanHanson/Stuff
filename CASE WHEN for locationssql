@@ -1,0 +1,12 @@
+Select DISTINCT
+LagStalle
+,CASE
+	WHEN LagStalle = 0 THEN 'Main Warehouse'
+	WHEN LagStalle = 11 THEN 'Gordon'
+	WHEN LagStalle = 10 THEN 'Thibiant'
+	WHEN LagStalle = 21 THEN 'Amcol'
+	WHEN LagPlatsNamn LIKE '%Amazon%' THEN 'Amazon'
+	ELSE LagPlatsNamn
+	END AS 'Location'
+FROM
+xb
